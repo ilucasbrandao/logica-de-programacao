@@ -9,16 +9,9 @@ const minutosConsumidos = Number(
   input("Digite a quantidade de minutos consumidos: ")
 );
 
-const planoBasico = 50;
-const franquiaMinutos = 100;
-const custoPorMinutosExcedentes = 2;
+let valorAPagar = 50;
 
-let valorAPagar;
-
-if (minutosConsumidos <= franquiaMinutos) {
-  valorAPagar = planoBasico;
-} else {
-  const minutosExcedentes = minutosConsumidos - franquiaMinutos;
-  valorAPagar = planoBasico + minutosExcedentes * custoPorMinutosExcedentes;
+if (minutosConsumidos > 100) {
+  valorAPagar = valorAPagar + 2 * (minutosConsumidos - 100);
 }
 console.log(`Valor a ser pago: R$ ${valorAPagar.toFixed(2)}`);
